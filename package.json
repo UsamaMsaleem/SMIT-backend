@@ -12,13 +12,18 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.18.1",
     "config": "^3.2.4",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "googleapis": "^27.0.0",
     "jsonwebtoken": "^8.4.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "sharp": "^0.23.4",
     "validator": "^10.10.0"
   },
   "devDependencies": {

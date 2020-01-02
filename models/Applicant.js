@@ -49,11 +49,11 @@ const Applicant = new Schema({
   qualification: {
     type: String,
     required: true
-  }
-  // photo: {
-  //   type:File ,
-  //   required: true
-  // },
+  },
+  photo: {
+    type:String,
+    required: true
+  },
 });
 
 const Applicants = mongoose.model("Applicant", Applicant);
