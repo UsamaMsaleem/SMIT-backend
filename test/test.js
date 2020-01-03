@@ -30,19 +30,27 @@ chai.use(chaiHttp);
 //   });
 
 it("should add an Course on POST", function(done) {
+  const obj ={
+    courseName: "Designing",
+    status:"pass",
+    open:"false",
+    courseTiming:["monday","tuesday"]
+  }
   chai
     .request(server)
     .post("/addcourse/addnewcourse")
-    .send({ course: "Usama" })
+    .send({ courseName: "Designing",status:"pass",open:"false",courseTiming:["monday","tuesday"]})
     .end(function(err, res) {
       should.equal(err, null);
       res.should.have.status(200);
       res.should.be.json;
       // console.log('Line 45 res body', res.body);
       res.body.should.be.a("object");
-      res.body.should.have.property("course");
-      // res.body.course.should.be.a('string');
-      // res.body.course.should.equal('Kale');
+      res.body.should.have.property("courseName");
+      res.body.should.have.property("open");
+      res.body.should.have.property("status");
+      res.body.should.have.property("courseTiming");
+
       done();
     });
 });

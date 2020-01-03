@@ -2,8 +2,20 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Addcourse = new Schema({
-  course: {
+  courseName: {
     type: String,
+    required: true
+  },
+  courseTiming: {
+    type: Array,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true
+  },
+  open: {
+    type: Boolean,
     required: true
   }
 });

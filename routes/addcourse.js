@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Addcourses = require("../models/Addcourse");
 
-router.use(express.urlencoded());
-
+// router.use(express.urlencoded());
+router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 
 //ok api
