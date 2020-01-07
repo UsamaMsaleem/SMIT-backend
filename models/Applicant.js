@@ -2,11 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Applicant = new Schema({
+  rollNo: {
+    type: String,
+    required: true
+  },
   city: {
     type: String,
     required: true
   },
   course: {
+    type: String,
+    required: true
+  },
+  courseLimit: {
     type: String,
     required: true
   },
@@ -51,9 +59,9 @@ const Applicant = new Schema({
     required: true
   },
   photo: {
-    type:String,
+    type: String,
     required: true
-  },
+  }
 });
 
 const Applicants = mongoose.model("Applicant", Applicant);

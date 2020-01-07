@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Addcourses = require("../models/Addcourse");
+const db = require("../config/db");
 
 // router.use(express.urlencoded());
 router.use(express.urlencoded({ extended: true }));
@@ -35,6 +36,20 @@ router.post("/addnewcourse", function(req, res) {
       res.json({ message: "COURSE ADDED SUCCESSS", course });
     }
   });
+});
+
+
+router.post("/updatecourse", function(req, res) {
+  Addcourses.update(
+    { _id: req.body._id }, // Filter
+    { $set: { open: req.body.open, status: req.body.status } }
+  )
+    .then(course => {
+      res.json({ message: "COURSE UPDATED SUCCESSS", course });
+    })
+    .catch(err => {
+      res.send(err);
+    });
 });
 
 module.exports = router;

@@ -39,7 +39,7 @@ it("should add an Course on POST", function(done) {
   chai
     .request(server)
     .post("/addcourse/addnewcourse")
-    .send({ courseName: "Designing",status:"pass",open:"false",courseTiming:["monday","tuesday"]})
+    .send(obj)
     .end(function(err, res) {
       should.equal(err, null);
       res.should.have.status(200);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Addcourse = new Schema({
+const Courses = new Schema({
   courseName: {
     type: String,
     required: true
@@ -17,8 +17,20 @@ const Addcourse = new Schema({
   open: {
     type: Boolean,
     required: true
+  },
+  instructions: {
+    type: Array,
+    required: true
+  },
+  rollNumStart: {
+    type: Number,
+    required: true
+  },
+  rollNumSeq: {
+    type: Number,
+    required: true
   }
 });
 
-const Addcourses = mongoose.model("Addcourse", Addcourse);
+const Addcourses = mongoose.model("Courses", Courses);
 module.exports = Addcourses;
